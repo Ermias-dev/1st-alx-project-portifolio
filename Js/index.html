@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n, k;  // n for number of glasses and k for number of liter of water
+        function solution(n, k) { // function defination
+            var res = 0; // temporary variable to store the result
+            while (k) {
+                if (n == 0) {
+                    return -1; //returns no glass
+                } else if (n >= k) {
+                    // k liter of glass available so just one more glass
+                    res++;
+                    break;
+                } else {
+                    // basically it takes the bigest glass and update the values of n,k
+                    res = res + 1;
+                    k = k - n;
+                    n--;
+                }
+            }
+            return res;  // returning the answer after calculations
+        }
+        
+        // printing test cases using document.write
+        document.write("For N = 5 and K=8, Minimum glasses required are/is: " + solution(5, 8) + "<br>");  // calling the function sollution() and giving the test case 1 value of n and k
+        document.write("For N = 4 and K=10, Minimum glasses required are/is: " + solution(4, 10) + "<br>");  // calling the function sollution() and giving the test case 1 value of n and k
+        document.write("For N = 1 and K=2, Minimum glasses required are/is: " + solution(1, 2) + "<br>");  // calling the function sollution() and giving the test case 1 value of n and k
+        document.write("For N = 10 and K=5, Minimum glasses required are/is: " + solution(10, 5) + "<br>");  // calling the function sollution() and giving the test case 1 value of n and k
+    </script>
+</body>
+
+ 
+
+</html>
